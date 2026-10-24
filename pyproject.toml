@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spotify-playlist-organizer"
+version = "0.1.0"
+description = "Safely organize a Spotify master playlist by artist and date added"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.32.4,<3", "python-dotenv>=1.1,<2"]
+
+[project.scripts]
+spotify-playlist-organizer = "spotify_playlist_organizer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
